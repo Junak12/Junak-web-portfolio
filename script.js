@@ -1,13 +1,9 @@
 
-const colors = ['#4facfe', '#00f2fe', '#ff7e5f', '#feb47b', '#ff6a88', '#d66d75', '#fda085'];
+const colors = ['#ff7e5f', '#feb47b', '#ff6a88', '#d66d75', '#fda085', '#FF5733', '#900C3F', '#C70039'];
 let currentColor = 0;
 
 function changeBackground() {
-    document.body.style.backgroundColor = colors[currentColor];
-    document.querySelectorAll('section').forEach(section => {
-        section.style.backgroundColor = colors[(currentColor + 1) % colors.length];
-    });
-
+    document.body.style.background = colors[currentColor];
     currentColor = (currentColor + 1) % colors.length;
 }
 
@@ -15,33 +11,27 @@ setInterval(changeBackground, 3000);
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const targetSection = document.querySelector(this.getAttribute('href'));
-        targetSection.scrollIntoView({
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
-        document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
-        this.classList.add('active');
     });
 });
+const animatedTextElements = document.querySelectorAll('.animated-text');
 
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('main section');
-    let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100; 
-        const sectionHeight = section.clientHeight;
-
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            const currentId = section.getAttribute('id');
-            document.querySelector(`nav a[href="#${currentId}"]`).classList.add('active');
-        } else {
-            const currentId = section.getAttribute('id');
-            document.querySelector(`nav a[href="#${currentId}"]`).classList.remove('active');
-        }
+animatedTextElements.forEach((element) => {
+    element.style.transition = 'transform 0.5s';
+    element.addEventListener('mouseover', () => {
+        element.style.transform = 'translateY(-5px)';
+        element.style.color = '#007bff'; 
     });
 
-    // Move profile image down on scroll
-    const profileImage = document.querySelector('.profile-image');
-    profileImage.style.transform = `translateY(${scrollPosition / 2}px)`; // Adjust as needed
+    element.addEventListener('mouseout', () => {
+        element.style.transform = 'translateY(0)';
+        element.style.color = '#333'; 
+    });
+});
+const profileImage = document.querySelector('.profile-image');
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    profileImage.style.transform = `translateY(${Math.min(scrollY / 2, 30)}px)`;
 });
