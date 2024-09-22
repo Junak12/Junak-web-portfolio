@@ -22,7 +22,7 @@ animatedTextElements.forEach((element) => {
     element.style.transition = 'transform 0.5s';
     element.addEventListener('mouseover', () => {
         element.style.transform = 'translateY(-5px)';
-        element.style.color = '#007bff'; 
+        element.style.color = '#900C3F'; 
     });
 
     element.addEventListener('mouseout', () => {
