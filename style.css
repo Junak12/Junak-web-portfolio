@@ -1,0 +1,154 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, rgb(180, 209, 233), #cce1e2);
+    color: #333;
+    overflow-x: hidden;
+    transition: background-color 1s ease; /* Smooth transition for background color */
+}
+
+header {
+    position: relative;
+    padding: 2rem;
+    text-align: center;
+}
+
+.profile-image {
+    width: 250px; /* Adjust as needed */
+    height: auto;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px; /* Initial position */
+    right: 20px;
+    transition: transform 0.5s ease; /* Smooth transition for image */
+}
+
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-links a {
+    margin: 0 10px;
+    color: #333;
+    font-size: 20px; /* Reduced size */
+    transition: color 0.3s, background-color 0.3s, transform 0.3s;
+    padding: 5px 10px; /* Padding for hover effect */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.social-links a:hover {
+    color: white; /* Change text color */
+    background-color: #191a1b; /* Background color on hover */
+    transform: scale(1.1); /* Scale effect */
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+}
+
+.navbar a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s, background-color 0.3s, font-weight 0.3s;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.navbar a:hover {
+    color: white;
+    background-color: #1b1d1f;
+    font-weight: bold;
+}
+
+main {
+    padding: 2rem;
+}
+
+section {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, transform 0.3s; /* Smooth transition for background */
+}
+
+section:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-5px);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+}
+
+.animated-text {
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Form styles */
+#contactForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#contactForm label {
+    margin: 10px 0 5px;
+}
+
+#contactForm input,
+#contactForm textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#contactForm button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #181a1b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#contactForm button:hover {
+    background-color: #181a1b;
+}
+
+/* Decrease font size for contact links */
+.contact-info p {
+    font-size: 14px; /* Reduced size */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+/* Add hover effect for contact links */
+.contact-info p:hover {
+    color: white; /* Change text color on hover */
+    background-color: #181a1d; /* Background color on hover */
+    padding: 5px 10px; /* Padding for hover effect */
+    border-radius: 5px; /* Rounded corners */
+}
+.fab fa-codeforces {
+    color: rgb(26, 48, 5);
+}
